@@ -57,6 +57,7 @@ public class LogPerpus {
             dataUser[4] = LocalDateTime.now().format(formatWaktu);
             tableModel.insertRow(0, dataUser);
             labelError.setVisible(false);
+            rs.close();
         } catch (SQLException e) {
             labelError.setVisible(true);
             e.printStackTrace();
@@ -168,6 +169,7 @@ public class LogPerpus {
                 dataUser[3] = rs.getString("angkatan");
                 dataUser[4] = rs.getString("time");
                 tableModel.insertRow(0, dataUser);
+                rs.close();
             }
         } catch (SQLException e) {
             e.printStackTrace();
