@@ -72,6 +72,24 @@ public class LogPerpus {
         }
     }
 
+    void tungguBentar() {
+        Thread tampilkan = new Thread(new Runnable() {
+
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }                            
+                labelError.setText("");
+            }
+            
+        });
+
+        tampilkan.start();
+    }
+
     LogPerpus() {
         
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -119,6 +137,7 @@ public class LogPerpus {
         panelBawah.add(panelInputID);
         
         labelError.setText("ID Tidak Ditemukan");
+        tungguBentar();
         labelError.setFont(fontLabelInfo);
         labelError.setForeground(merah);
         labelError.setVisible(false);
@@ -169,8 +188,8 @@ public class LogPerpus {
                 dataUser[3] = rs.getString("angkatan");
                 dataUser[4] = rs.getString("time");
                 tableModel.insertRow(0, dataUser);
-                rs.close();
             }
+            rs.close();
         } catch (SQLException e) {
             e.printStackTrace();
         }
