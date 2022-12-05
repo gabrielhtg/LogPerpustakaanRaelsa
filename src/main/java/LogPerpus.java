@@ -137,11 +137,11 @@ public class LogPerpus {
         panelBawah.add(panelInputID);
         
         labelError.setText("ID Tidak Ditemukan");
-        tungguBentar();
         labelError.setFont(fontLabelInfo);
         labelError.setForeground(merah);
         labelError.setVisible(false);
         labelError.setBounds(270 + 260, 10 + 15, 300, 30);
+        tungguBentar();
         panelInputID.add(labelError);
 
         panelTengah.setPreferredSize(new Dimension(1920 - 420, 50));
