@@ -60,6 +60,7 @@ public class LogPerpus {
             rs.close();
         } catch (SQLException e) {
             labelError.setVisible(true);
+            tungguBentar();
             e.printStackTrace();
         }
 
@@ -141,7 +142,6 @@ public class LogPerpus {
         labelError.setForeground(merah);
         labelError.setVisible(false);
         labelError.setBounds(270 + 260, 10 + 15, 300, 30);
-        tungguBentar();
         panelInputID.add(labelError);
 
         panelTengah.setPreferredSize(new Dimension(1920 - 420, 50));
